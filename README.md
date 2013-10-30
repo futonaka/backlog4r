@@ -3,6 +3,8 @@
 Under Development
 
 This gem is the interface for WebAPI of Backlog.
+* Backlog API
+http://www.backlog.jp/api/
 
 ## Installation
 
