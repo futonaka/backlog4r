@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-### Create client
+### Create api client
 
     backlog = Backlog4r::Backlog.new("space_name", "user_id", "password")
 
@@ -44,7 +44,7 @@ Or install it yourself as:
          "url"=>"https://space_name.backlog.jp/projects/PRJ2",
          "key"=>"PRJ2"}]
 
-### Get project
+### Get a project
 
     backlog.get_project "project_key"
       or
