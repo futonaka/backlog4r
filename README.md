@@ -83,7 +83,7 @@ backlog.find_issue({ projectId: 100, statusId: 2 })
 It can be provided create conditions by hash.
 
 ```ruby
-backlog.createIssue({projectId: 100, summary: "create issue"})
+backlog.create_issue({projectId: 100, summary: "create issue"})
 => {"summary"=>"create test",
     "id"=>1001,
     "created_user"=>{"id"=>900, "name"=>"user name"},
