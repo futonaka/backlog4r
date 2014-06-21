@@ -32,6 +32,7 @@ backlog = Backlog4r::Backlog.new("space_name", "user_id", "password")
 
 ```ruby
 backlog.get_projects
+
 => [{"use_parent_child_issue"=>false,
      "id"=>100,
      "text_formatting_rule"=>"backlog",
@@ -54,6 +55,7 @@ backlog.get_projects
 backlog.get_project "project_key"
   or
 backlog.get_project 100  # project id
+
 => [{"use_parent_child_issue"=>false,
      "id"=>100,
      "text_formatting_rule"=>"backlog",
@@ -69,6 +71,7 @@ It can be provided finding conditions by hash.
 
 ```ruby
 backlog.find_issue({ projectId: 100, statusId: 2 })
+
 => [{"custom_fields"=> {},
   "summary"=>"Issue Summary",
   "estimated_hours"=>3.0,
@@ -84,6 +87,7 @@ It can be provided create conditions by hash.
 
 ```ruby
 backlog.create_issue({projectId: 100, summary: "create issue"})
+
 => {"summary"=>"create test",
     "id"=>1001,
     "created_user"=>{"id"=>900, "name"=>"user name"},
