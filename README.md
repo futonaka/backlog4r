@@ -25,7 +25,12 @@ Or install it yourself as:
 ### Create api client
 
 ```ruby
-backlog = Backlog4r::Backlog.new("space_name", "user_id", "password")
+# When user account.
+backlog = Backlog4r::BacklogUser.new("space_name", "user_id", "password")
+
+# When admin account.
+backlog = Backlog4r::BacklogAdmin.new("space_name", "user_id", "password")
+
 ```
 
 ### Get projects
