@@ -5,7 +5,7 @@ require "active_support/core_ext"
 
 module Backlog4r
   class Backlog < XMLRPC::Client::Proxy
-    def initialize(space_name, user_id, password)
+    def initialize(space_name, user_id, password, prefix)
       space_uri  = URI.parse("https://#{space_name}.backlog.jp/XML-RPC")
       proxy_host = proxy_port = nil
       use_ssl    = true
@@ -21,12 +21,24 @@ module Backlog4r
                                   use_ssl,
                                   timeout,
                                  )
-      super(server, "backlog")
+      super(server, prefix)
     end
 
     def method_missing(action, *args)
       action = action.to_s.camelize(:lower).to_sym
       super
+    end
+  end
+
+  class BacklogUser < Backlog
+    def initialize(space_name, user_id, password)
+      super(space_name, user_id, password, 'backlog')
+    end
+  end
+
+  class BacklogAdmin < Backlog
+    def initialize(space_name, user_id, password)
+      super(space_name, user_id, password, 'backlog.admin')
     end
   end
 end
