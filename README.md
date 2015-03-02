@@ -26,10 +26,10 @@ Or install it yourself as:
 
 ```ruby
 # When user account.
-backlog = Backlog4r::BacklogUser.new("space_name", "user_id", "password")
+backlog = Backlog4r::User.new("space_name", "user_id", "password")
 
 # When admin account.
-backlog = Backlog4r::BacklogAdmin.new("space_name", "user_id", "password")
+backlog = Backlog4r::Admin.new("space_name", "user_id", "password")
 
 ```
 
